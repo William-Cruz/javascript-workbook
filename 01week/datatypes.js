@@ -14,7 +14,8 @@ Null
 Undefined
 Number
 NaN
-String*/
+String
+I'm using an alert to show results*/
 alert(typeof 1) 
 //5.Write a JavaScript program that adds 2 numbers together.
 const c = a + b;
