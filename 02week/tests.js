@@ -12,7 +12,7 @@ function rockPaperScissors(arg1, arg2) {
   
   const hand1 = arg1.trim().toLowerCase();
   const hand2 = arg2.trim().toLowerCase();
-  //console.log(hand1,hand2)
+  
 
   if (hand1===hand2){
     return "It's a tie!";
