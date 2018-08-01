@@ -9,10 +9,36 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
-
-  // Your code here
-
+  var firstPosition = findFirstVowelPosition(word);
+  if (firstPosition >0){
+    return word.slice(firstPosition) + word.slice(0,firstPosition) + 'ay';
+  }
+  return word + 'yay';
 }
+  
+function findFirstVowelPosition(word){
+  for (var i=0; i<word.length; i++){
+    if ('aeiouy'.indexOf(word[i])!==-1){
+      return i;
+    }
+  }
+}
+
+
+// Your code here
+/* validInput function checks to see if the word used is a string and not a number
+
+lowercaseTrim transforms the word to lower case and deletes spaces
+
+vowelsPlusY takes all the vowels plus y ['a','e','i','o','u','y'] checks for a word that begins 
+with a vowel and adds yay to the end
+
+consantAy checks begining of word for consanont takes first 
+consonant and moves it to the rear and starts over until it comes to a vowel it stops and 
+adds ay to the word
+*/  
+
+
 
 
 function getPrompt() {
