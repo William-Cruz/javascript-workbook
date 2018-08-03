@@ -1,7 +1,12 @@
 'use strict'
-
-var printListOfOlympians = ['Michael Phelps','Hope Solo','Diana Lopez','Kara Patterson','Amanda Furrer'];
-
-printListOfOlympians.forEach(function(element) {
-  console.log(element);
-});
+let nameArr = [
+  'Sean', 'Rob', 'Bob', 'Peter', 'John'
+]
+function printListOfOlympians(nameArr){
+  nameArr.forEach(function(entry){
+    console.log(nameArr);
+  });
+    
+}
+    
+printListOfOlympians(['Sean', 'Rob', 'Bob', 'Peter', 'John'])
