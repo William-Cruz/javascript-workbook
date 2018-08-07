@@ -19,24 +19,53 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
-  // Your code here
-
+//make the 2 tests for this function 
+const movePiece = (valueInArrB4Move, valueInArrB4Drop) => {
+  if(isLegal(valueInArrB4Move[valueInArrB4Move.length-1], valueInArrB4Drop[valueInArrB4Drop.length-1])){
+    const valueOfPickedPiece = valueInArrB4Move.pop();
+    const valueOfArrAfterPieceDop = valueInArrB4Drop.push(valueOfPickedPiece);
+    return valueOfArrAfterPieceDop
+    //returns the length of the new array where you placed the item
+  } 
 }
 
-function isLegal() {
-  // Your code here
-
+// function compares valueInArrB4Move last item value == valueInArrB4Drop last item value
+const isLegal = (valueInArrB4Move, valueInArrB4Drop)=>{
+  if(valueInArrB4Drop === undefined || valueInArrB4Move <= valueInArrB4Drop){
+    return true
+  } else {
+    console.log(false)
+    return false
+  }
 }
 
-function checkForWin() {
-  // Your code here
-
+const legalMove = (startStack, endStack) =>{
+  
 }
 
-function towersOfHanoi(startStack, endStack) {
-  // Your code here
+const checkForWin = (valueInArrB4Move, valueInArrB4Drop) => {
+  if(stacks.b.length === 4 || stacks.c.length === 4){
+    
+    console.log('you won')
+  } else {
+    
+    return false
+  }
+}
 
+const towersOfHanoi = (startStack, endStack) => { 
+  //what the array looks like before you move the last item in the key you are inputing in startStack
+  const valueInArrB4Move = stacks[startStack];
+
+  //what the array looks like before you place the last item in the key you are inputing in endStack
+  const valueInArrB4Drop = stacks[endStack];
+
+  if(movePiece(valueInArrB4Move, valueInArrB4Drop)){
+    if(checkForWin(valueInArrB4Move, valueInArrB4Drop)){
+      
+    }
+  } else {
+  }   
 }
 
 function getPrompt() {
