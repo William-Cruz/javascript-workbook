@@ -75,7 +75,7 @@ const checkForWin=()=>{
   } else if (verticalWin()) {
     console.log('Vertical Win!')
     return true;
-  } else if (diagnalWin()) {
+  } else if (diagonalWin()) {
     console.log('Diagnal Win!')
     return true;
   }
@@ -91,22 +91,31 @@ const isInputValid=(row,column)=>{
 }
 
 
-const ticTacToe=(row, column)=>{
-  if (isInputValid(row,column)){
-    board[row][column]= playerTurn;
-    turn++
-    if( checkForWin() ){
+function ticTacToe(row, column) {
+  if (isInputValid(row, column)) {
+    board[row][column] = playerTurn;
+    turn++;
+    console.log(turn)
+    if (checkForWin()) {
       board = [
         [' ', ' ', ' '],
         [' ', ' ', ' '],
         [' ', ' ', ' ']
       ];
-      playerTurn ='X';
-    } else{
-      switchPlayer(row,column)
+      playerTurn = 'X';
+    } else {
+      switchPlayer(row, column)
+    }
+    if (turn === 9) {
+      console.log('GAME OVER')
+      board = [
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' ']
+      ];
     }
   } else {
-    console.log('Invalid Move')
+    console.log('INVALID MOVE')
   }
 }
 
