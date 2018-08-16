@@ -14,7 +14,7 @@ let board = [
 
 let playerTurn = 'X';
 let turn = 0;
-
+//switchPlayer function job is to switch between players
 const switchPlayer=(row,column)=> {
   if(playerTurn ==='X') {
     playerTurn = 'O';
@@ -22,7 +22,7 @@ const switchPlayer=(row,column)=> {
     playerTurn = 'X';
   }
 }
-
+//this printBoard to the terminal
 function printBoard() {
   console.log('   0  1  2');
   console.log('0 ' + board[0].join(' | '));
@@ -32,6 +32,7 @@ function printBoard() {
   console.log('2 ' + board[2].join(' | '));
 }
 
+//rules for every horizontal win
 const horizontalWin=()=> {
   console.log('playerTurn=',playerTurn)
   if(board[0][0] === playerTurn && board[0][1] === playerTurn && board[0][2] === playerTurn) {
@@ -45,6 +46,7 @@ const horizontalWin=()=> {
   }
 }
 
+//rules for every vertical win
 const verticalWin=()=>{
   if(board[0][0] === playerTurn && board[1][0] === playerTurn && board[2][0] === playerTurn) {
     return true;
@@ -57,7 +59,7 @@ const verticalWin=()=>{
   }
 }
 
-
+//rules for every diaganol win
 function diagonalWin() {
   if(board[0][0] === playerTurn && board[1][1] === playerTurn && board[2][2] === playerTurn) {
     return true;
@@ -68,6 +70,7 @@ function diagonalWin() {
   }
 }
 
+//this function checks for win 
 const checkForWin=()=>{
   if(horizontalWin()) {
     console.log('Horizontal Win!')
@@ -81,7 +84,7 @@ const checkForWin=()=>{
   }
 }
   
-
+//this function checks for a valid input
 const isInputValid=(row,column)=>{
   if((row === '0'|| row === '1'|| row === '2') && (column==='0'||column==='1'||column==='2') && (board[row][column] === ' ')){
     return true ;
@@ -90,12 +93,33 @@ const isInputValid=(row,column)=>{
   }
 }
 
+<<<<<<< Updated upstream
 
 const ticTacToe=(row, column)=>{
   if (isInputValid(row,column)){
     board[row][column]= playerTurn;
     turn++
     if( checkForWin() ){
+=======
+//parent function 
+function ticTacToe(row, column) {
+  if (isInputValid(row, column)) {
+    board[row][column] = playerTurn;
+    turn++;
+    console.log(turn)
+    if (checkForWin()) {
+      board = [
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' ']
+      ];
+      playerTurn = 'X';
+    } else {
+      switchPlayer(row, column)
+    }
+    if (turn === 9) {
+      console.log('GAME OVER')
+>>>>>>> Stashed changes
       board = [
         [' ', ' ', ' '],
         [' ', ' ', ' '],
@@ -109,7 +133,7 @@ const ticTacToe=(row, column)=>{
     console.log('Invalid Move')
   }
 }
-
+//checks for a tie
 const isATie = (turn)=>{
   if(turn > 9){
     console.log(true)
