@@ -93,14 +93,6 @@ const isInputValid=(row,column)=>{
   }
 }
 
-<<<<<<< Updated upstream
-
-const ticTacToe=(row, column)=>{
-  if (isInputValid(row,column)){
-    board[row][column]= playerTurn;
-    turn++
-    if( checkForWin() ){
-=======
 //parent function 
 function ticTacToe(row, column) {
   if (isInputValid(row, column)) {
@@ -119,7 +111,6 @@ function ticTacToe(row, column) {
     }
     if (turn === 9) {
       console.log('GAME OVER')
->>>>>>> Stashed changes
       board = [
         [' ', ' ', ' '],
         [' ', ' ', ' '],
