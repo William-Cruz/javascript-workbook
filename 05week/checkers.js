@@ -17,9 +17,7 @@ class Checker {
   }
 }
 
-// function Checker() {
-//   // Your code here
-// }
+
 
 class Board {
   constructor() {
@@ -63,7 +61,7 @@ class Board {
     console.log(string);
   }
 
-  // Your code here
+  //this is the 'W' checker pieces location on the board.
 
   createCheckers(){
     // [row, column]
@@ -85,12 +83,10 @@ class Board {
       let whiteRow = whitePosition[i][0];
       let whiteColumn = whitePosition[i][1];
       let whiteChecker = new Checker('white');
-      // console.log(whiteRow);
       this.checkers.push(whiteChecker);
-      // console.log(this.grid[whiteRow][whiteColumn]);
       this.grid[whiteRow][whiteColumn] = whiteChecker;
     }
-
+    //this is the 'B' checker pieces location on the board.
     const blackPosition = [
       [5, 0],
       [5, 2],
@@ -109,9 +105,7 @@ class Board {
       let blackRow = blackPosition[i][0];
       let blackColumn = blackPosition[i][1];
       let blackChecker = new Checker('black');
-      // console.log(whiteRow);
       this.checkers.push(blackChecker);
-      // console.log(this.grid[whiteRow][whiteColumn]);
       this.grid[blackRow][blackColumn] = blackChecker;
     }
   }
@@ -127,6 +121,7 @@ class Game {
     this.board.createGrid();
     this.board.createCheckers();
   }
+  //how to move the game piece from one spot to the next on the board
   moveChecker (source, destination) {
     if (isLegalInput(source, destination) && 
     isLegalMove (source, destination)) {
@@ -153,7 +148,7 @@ class Game {
   }
 }
 
-
+//code for what is a valid character input
 const isLegalInput = (source, destination) => {
   const sourceRow = parseInt(source.charAt(0));
   const sourceColumn = parseInt(source.charAt(1));
@@ -163,6 +158,7 @@ const isLegalInput = (source, destination) => {
   let destinationGood = (destinationRow >= 0 && destinationColumn < 8);
   return (sourceGood && destinationGood);
 }
+//code for what is a legal move
 const isLegalMove = (source, destination) => {
   const sourceRow = parseInt(source.charAt(0));
   const sourceColumn = parseInt(source.charAt(1));
