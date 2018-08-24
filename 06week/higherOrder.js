@@ -1,26 +1,95 @@
 'use strict';
 
 const assert = require('assert');
+const users = [{
+  id: 3393,
+  name: 'steve rogers',
+  age: 100
+},
+{
+  id: 53,
+  name: 'tony stark',
+  age: 40
+},
+{
+  id: 7,
+  name: 'peter quill',
+  age: 30
+},
+{
+  id: 102,
+  name: 'wanda maximoff',
+  age: 25
+},
+{
+  id: 69,
+  name: 'gamora',
+  age: 35
+},
+];
+//use forEach to console.log each user object. Assign the return of this forEach to a variable called forEachTest.
 
-function forEach(arr, callback) {
-  // Your code here
-}
+Object.keys(users).forEach(function(key) {
+  forEachTest = (key, users[key]);
+  console.log(forEachTest);
+});
 
-function map(arr, callback) {
-  // Your code here
-}
 
-function filter(arr, callback) {
-  // Your code here
-}
 
-function some(arr, callback) {
-  // Your code here
-}
+//use map to create a new array with all of the user's names. Assign the return of the map to a variable called mapTest.
+const mapTest = users.map(function (user) {
+  return user.name;
+});
+const mapTest = users.map(user => user.name);
+console.log(mapTest);
 
-function every(arr, callback) {
-  // Your code here
-}
+
+//use filter to create a new array with only the users that have an age of 40 or above. Assign the return of the filter to a variable called filterTest.
+const filterTest = users.filter(function (user) {
+  return user.age >= 40;
+});
+console.log(filterTest)
+
+//use some to determine if there is at least one user with an id of greater than 1000. Assign the return of some to a variable called someTest
+
+const someTest = users.some((user)=>{
+  return user.id > 1000;
+});
+console.log(someTest)
+same
+const someTest = users.some((item,index)=>{
+  return item.id > 1000;
+});
+console.log(someTest)
+
+//use every to determine if there if all of the users have the letter 's' in their name. Assign the return of some to a variable called everyTest
+const everyTest = users.every((item,index)=>{
+  console.log(item.name.indexOf('s'),item.name);
+  return item.name.indexOf('s') != -1;
+});
+console.log(everyTest)
+
+
+//use find to find the user with the id of 102. Assign the find return to a variable called findTest
+
+//console log findTest
+const findTest = users.find((user)=>{
+  return user.id === 102;
+});
+console.log(findTest)
+//same
+const findTest = users.find((item,index)=>{
+  return item.id === 102;
+});
+console.log(findTest)
+//how to acess just the name
+const findTest = users.find((item,index)=>{
+  return item.id === 102;
+});
+console.log(findTest.name)
+
+
+
 
 if (typeof describe === 'function') {
 
