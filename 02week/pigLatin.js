@@ -9,7 +9,7 @@ const rl = readline.createInterface({
 
 
 function pigLatin(word) {
-  var firstPosition = findFirstVowelPosition(word);
+  const firstPosition = findFirstVowelPosition(word);
   if (firstPosition >0){
     return word.slice(firstPosition) + word.slice(0,firstPosition) + 'ay';
   }
@@ -17,7 +17,7 @@ function pigLatin(word) {
 }
   
 function findFirstVowelPosition(word){
-  for (var i=0; i<word.length; i++){
+  for (let i=0; i<word.length; i++){
     if ('aeiouy'.indexOf(word[i])!==-1){
       return i;
     }
