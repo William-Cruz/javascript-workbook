@@ -15,12 +15,39 @@ Undefined
 Number
 NaN
 String*/
-alert(typeof 1) 
+//1.undefined check
+if (typeof xyz === "undefined")alert("xyz is undefined");
+
+//2.null check-This one was hard to find!
+Object.prototype.isNullOrEmpty = function(value){
+  return (!value);
+}
+Object.prototype.isNullOrEmpty('')
+//3. number check
+if (typeof 5 === 'number')alert("this is a number");
+//4. boolean check
+if (typeof true === 'boolean')alert("this is a boolean");
+if (typeof false === 'boolean')alert("this is a boolean");
+//5.string check
+if (typeof 'smurf' === 'string')alert("this is a string");
+//6. NaN check-this was not easy!
+const checkNum=(x)=>{
+  if (isNaN(x)) {
+    return 'not a number!';
+  }
+  return x;
+}
+
+console.log(checkNum('3f66'));
+// expected output Not a number!
+
+console.log(checkNum('455'));
+// expected output 455
 //5.Write a JavaScript program that adds 2 numbers together.
-const c = a + b;
-const a = 5;
-const b = 4;
-alert(a+b);
+const addTwoNums=(num1, num2)=>{
+  return num1+num2
+}
+addTwoNums(5,6)
 //6.Write a JavaScript program that runs only when 2 things are true.
 if (5 > 0 && 0 < 3) {
   alert("true");
