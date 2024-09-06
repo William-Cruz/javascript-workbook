@@ -21,11 +21,11 @@
   "dependencies": {
     "functional-javascript-workshop": "^1.0.6",
     "htmllint-cli": "github:kevincolten/htmllint-cli",
-    "http-server": "^0.11.1",
-    "javascripting": "^2.6.1",
-    "jsdom": "^11.6.2",
+    "http-server": "^14.0.0",
+    "javascripting": "^2.7.4",
+    "jsdom": "^16.6.0",
     "mocha": "^5.0.0",
-    "stylelint": "^8.4.0"
+    "stylelint": "^16.0.0"
   },
   "devDependencies": {
     "eslint": "^4.19.1"
